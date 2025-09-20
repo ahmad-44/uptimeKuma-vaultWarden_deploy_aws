@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    environment:
+      - ADMIN_TOKEN=${ADMIN_TOKEN} # from .env
+    volumes:
+      - vaultwarden_data_volume:/vaultwarden/data #first is in EC2, second is inside docker
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    volumes:
+      - uptime_kuma_data_volume:/uptime-kuma/data #first is in EC2, second is inside docker
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+volumes:
+  vaultwarden_data_volume:
+  uptime_kuma_data_volume:

@@ -1,3 +1,5 @@
-.env
-docker/data/
-terraform.tfvars
+# Terraform secrets
+infra/terraform.tfvars
+
+# Docker secrets
+docker/.env
