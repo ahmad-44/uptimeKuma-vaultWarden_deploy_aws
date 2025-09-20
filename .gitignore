@@ -3,3 +3,34 @@ infra/terraform.tfvars
 
 # Docker secrets
 docker/.env
+# Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash log files
+crash.log
+
+# CLI configuration files
+terraform.rc
+terraform.auto.tfvars  # if it contains secrets
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Optional: user_data scripts (if you store secrets in them)
+# user_data/cloud-init.sh

@@ -51,5 +51,7 @@ resource "aws_instance" "this" {
   instance_type          = var.instance_type
   key_name               = var.ssh_key_name
   vpc_security_group_ids = [aws_security_group.this.id]
-  user_data              = file(var.user_data_file)
+  user_data = templatefile(var.user_data_file, {
+    ADMIN_TOKEN = var.admin_token
+  })
 }

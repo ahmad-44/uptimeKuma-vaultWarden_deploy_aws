@@ -7,7 +7,7 @@ services:
     environment:
       - ADMIN_TOKEN=${ADMIN_TOKEN} # from .env
     volumes:
-      - vaultwarden_data_volume:/vaultwarden/data #first is in EC2, second is inside docker
+      - ./vaultwarden_data:/data
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -16,11 +16,11 @@ services:
     image: louislam/uptime-kuma:latest
     container_name: uptime-kuma
     volumes:
-      - uptime_kuma_data_volume:/uptime-kuma/data #first is in EC2, second is inside docker
+      - uptime_kuma_data:/app/data
     ports:
       - "3001:3001"
     restart: unless-stopped
 
 volumes:
-  vaultwarden_data_volume:
-  uptime_kuma_data_volume:
+  vaultwarden_data:
+  uptime_kuma_data:

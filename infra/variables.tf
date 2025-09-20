@@ -15,3 +15,9 @@ variable "ssh_key_name" {
 variable "allowed_ssh_cidr" {
   description = "CIDR block allowed to SSH (example: YOUR_PUBLIC_IP/32)"
 }
+
+variable "admin_token" {
+  description = "Admin token for Vaultwarden"
+  type        = string
+  sensitive   = true
+}
