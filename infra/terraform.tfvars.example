@@ -1,5 +1,6 @@
-aws_region       = "us-east-1"
-instance_type    = "t2.micro"
+aws_region       = "us-east-1"      #set your region
+instance_type    = "t2.micro"       # set your instance type
 user_data_file = "${path.root}/../user_data/cloud-init.sh"
-ssh_key_name     = "your-keypair-name" #create a keypair in EC2 > Key Pairs, Download .pem, and bring the name of keypair here. 
+ssh_key_name     = "your-keypair-name" #create a keypair in > EC2 > Key Pairs > Create > Download .pem, and paste the name of keypair here. 
 allowed_ssh_cidr = "YOUR_PUBLIC_IP/32" #your computer's public IP so only you can access EC2 via SSH
+admin_token      = "add_your_own_custom_token_for_vaultwardner"
