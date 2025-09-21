@@ -21,7 +21,9 @@
 - run `aws configure` to authenticate your AWS with terraform.
 
 - Run these commands to deploye Uptime Kuma and Vaultwarden
-        cd infra
-        terraform init
-        terraform plan
-        terraform apply
+  cd infra
+  terraform init
+  terraform plan
+  terraform apply
+- After successful execution of `terraform apply`, terminal will show the Public IP of EC2 instance. open http://YOUR-EC2-PUBLIC-IP/3001 to access Uptime Kuma and open http://YOUR-EC2-PUBLIC-IP/8080/admin to access VaultWarden.
+- To undo AWS provisoning, stay in _/infra_ directory and run the command `terraform destroy`
